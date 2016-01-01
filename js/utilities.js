@@ -38,6 +38,7 @@ function queryOverpass (opt, callback) {
 }
 
 function loadData () {
+	$('div#loading').show();
 	var bbox = '('+
 		map.getBounds().getSouth()+','+
 		map.getBounds().getWest()+','+
@@ -54,6 +55,7 @@ function loadData () {
 }
 
 function showData (data) {
+	$('div#loading').hide();
 	console.log(data);
 	markers.clearLayers();
 	for (var i = 0; i < data.elements.length; i++) {
