@@ -5,8 +5,8 @@ function setupMap() {
 		attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
 		}).addTo(map);
 
-	map.on('load', loadData);
 	map.on('moveend', loadData);
+	loadData();
 	
 	markers = new L.FeatureGroup();
 }
